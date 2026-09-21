@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ruleta Sustentable</title>
+
+<style>
+
+</style>
+</head>
+
+
+<body>
+
+<div class="contenedor">
+    <a class="enlace-inicio" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/>
+        </svg>
+        <span>Volver al inicio</span>
+    </a>
+
+    <main class="home-card" aria-labelledby="titulo-principal">
+    <header class="home-brand">
+      <div class="swoosh" aria-hidden="true"></div>
+      <img src="Coca-Colatitulo.svg" alt="Coca-Cola" class="brand-logo">
+      <div class="brand-line"><span></span> Juegos por el planeta <span></span></div>
+    </header>
+
+    <!--MENU PRINCIPAL-->
+    <div id="menuPrincipal">
+
+        <h1>Ruleta Sustentable</h1>
+
+        <p class="descripcion">
+            Poné a prueba tus conocimientos y acumulá puntos por el planeta.
+        </p>
+
+        <div class="reglas">
+            <strong class="tituloReglas">¿Cómo jugar?</strong>
+            <ul>
+                <li>• <strong>Girá la ruleta</strong> para obtener una pregunta sobre el medio ambiente.</li>
+                <li>• Tenés <strong>30 segundos</strong> para responder cada pregunta.</li>
+                <li>• Sumá <strong>10 puntos</strong> por cada respuesta correcta.</li>
+                <li>• ¡Respondé las <strong>3 preguntas bien</strong> para ganar el juego perfecto!</li>
+            </ul>
+        </div>
+
+        <br>
+
+        <button id="comenzar">COMENZAR JUEGO</button>
+
+    </div>
+
+
+    <!--JUEGO-->
+    <div id="juego">
+
+        <h1 id="tituloJuego">Ruleta Sustentable</h1>
+
+        <p class="descripcion" id="descripcionJuego">
+            ¡Cuidar el planeta está en tus manos!
+        </p>
+
+        <!--INFORMACIÓN-->
+        <div class="informacion">
+            <div class="info puntos">
+                Puntos: <span id="puntos">0</span>
+            </div>
+
+            <div class="info tiempo">
+                Tiempo: <span id="tiempo">30</span>s
+            </div>
+
+            <div class="info progreso">
+                Desafíos: <span id="progreso">0</span> / 3
+            </div>
+        </div>
+
+        <!-- RULETA -->
+        <div class="ruleta" id="ruletaWrap">
+            <div class="flecha"></div>
+            <canvas id="canvas" width="700" height="700"></canvas>
+            <div class="centro"></div>
+        </div>
+
+        <button id="botonGirar">GIRAR RULETA</button>
+
+        <!-- DESAFÍO -->
+        <div id="desafio" class="desafio" style="display:none;">
+            <h2 id="tituloDesafio"></h2>
+            <div id="pregunta" class="pregunta"></div>
+            <div id="opciones" class="opciones"></div>
+            <div id="resultado" class="resultado"></div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--COPYRIGHT-->
+<footer class="footer">
+    <img src="logo_empresa.jpeg" alt="Logo de la empresa" class="logoEmpresa">
+    <span>© 2026 <strong>Pakova</strong> - Todos los derechos reservados.</span>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

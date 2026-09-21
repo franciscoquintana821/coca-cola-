@@ -1,4 +1,4 @@
-# Juegos Coca-Cola — Fan Fest Juegos Sudamericanos
+[# Juegos Coca-Cola — Fan Fest Juegos Sudamericanos
 Con el equipo de Pakova desarrollamos unos juego interactivos para el stand de Coca Cola en el Fan Fest - Juegos Sudamericanos (Septiembre 2026- Rosario )
 
 ## 🖼️ Demo / Capturas

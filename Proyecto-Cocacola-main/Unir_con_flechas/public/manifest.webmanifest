@@ -1,0 +1,17 @@
+{
+  "name": "Une por el Planeta",
+  "short_name": "Une por el Planeta",
+  "description": "Juego educativo sobre el cuidado del medio ambiente y la biodiversidad.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f40009",
+  "theme_color": "#f40009",
+  "icons": [
+    {
+      "src": "/icon-game.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

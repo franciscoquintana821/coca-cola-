@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d90812">
+  <title>Misión Reciclaje | Coca-Cola</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="eco-background" aria-hidden="true">
+    <span class="bubble bubble-1"></span><span class="bubble bubble-2"></span><span class="bubble bubble-3"></span><span class="bubble bubble-4"></span><span class="bubble bubble-5"></span>
+    <span class="bubble bubble-6"></span><span class="bubble bubble-7"></span><span class="bubble bubble-8"></span><span class="bubble bubble-9"></span><span class="bubble bubble-10"></span>
+    <span class="bubble bubble-11"></span><span class="bubble bubble-12"></span><span class="bubble bubble-13"></span><span class="bubble bubble-14"></span><span class="bubble bubble-15"></span>
+    <span class="bubble bubble-16"></span><span class="bubble bubble-17"></span><span class="bubble bubble-18"></span><span class="bubble bubble-19"></span><span class="bubble bubble-20"></span>
+  </div>
+  <main class="juego" aria-label="Misión Reciclaje">
+    <button class="enlace-inicio" id="enlace-inicio" type="button" onclick="volverAlInicio()">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/>
+      </svg>
+      <span>Volver al inicio</span>
+    </button>
+    <header class="marca">
+      <div class="swoosh" aria-hidden="true"></div>
+      <img src="Coca-Colatitulo.svg" alt="Coca-Cola" class="marca-coca">
+      <div class="marca-linea"><span></span> Juegos por el planeta <span></span></div>
+    </header>
+
+    <section id="pantalla-home" aria-labelledby="titulo-home">
+      <div class="home-intro">
+        <p class="eyebrow">Cuidemos juntos el planeta</p>
+        <h1 id="titulo-home">Misión Reciclaje</h1>
+        <p class="subtitulo">Poné a prueba tus conocimientos y ayudá a darle una nueva vida a cada residuo.</p>
+      </div>
+
+      <div class="reglas-home" aria-labelledby="titulo-reglas">
+        <h2 id="titulo-reglas">¿Cómo jugar?</h2>
+        <ul>
+          <li>Elegí el tacho correcto para cada residuo.</li>
+          <li>Tenés <strong>3 vidas</strong> para completar la misión.</li>
+          <li>Sumá <strong>10 puntos</strong> por cada respuesta correcta.</li>
+          <li>Reciclá los <strong>10 residuos</strong> y convertite en una persona experta.</li>
+        </ul>
+      </div>
+
+      <button class="boton-comenzar" type="button" onclick="comenzarJuego()">Comenzar juego <span>↗</span></button>
+    </section>
+
+    <section id="pantalla-juego" aria-live="polite">
+      <div class="intro">
+        <p class="eyebrow">Pequeñas decisiones, un gran impacto</p>
+        <h1 id="titulo-principal">Reciclá con propósito</h1>
+        <p class="subtitulo">Ayudá al planeta y elegí el tacho correcto para cada residuo.</p>
+      </div>
+
+      <div class="informacion" aria-label="Estado del juego">
+        <div class="dato"><span class="dato-icon">+</span><span class="dato-label">Puntos</span><strong id="puntos">0</strong></div>
+        <div class="dato"><span class="dato-icon corazon">♥</span><span class="dato-label">Vidas</span><strong id="vidas">3</strong></div>
+        <div class="dato"><span class="dato-icon">●</span><span class="dato-label">Residuo</span><strong><span id="numero-residuo">1</span><small>/10</small></strong></div>
+      </div>
+
+      <div class="pregunta-head"><p class="residuo-titulo">¿Dónde tirarías este residuo?</p><span class="pista">Elegí una opción</span></div>
+      <div class="residuo" id="residuo" aria-label="Residuo actual">🧴</div>
+
+      <div class="tachos" role="group" aria-label="Categorías de reciclaje">
+        <button class="tacho plastico" type="button" onclick="elegirTacho('plastico')"><span class="icono-reciclaje" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M19 7h10l3 6H16l3-6Zm-6 10h22l-2 24H15l-2-24Zm5 4v15m6-15v15m6-15v15"/></svg></span><b>Plástico</b><small>Envases y botellas</small></button>
+        <button class="tacho vidrio" type="button" onclick="elegirTacho('vidrio')"><span class="icono-reciclaje" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M19 6h10m-8 0v9l-5 8v16a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V23l-5-8V6m-10 17h16"/></svg></span><b>Vidrio</b><small>Frascos y botellas</small></button>
+        <button class="tacho organico" type="button" onclick="elegirTacho('organico')"><span class="icono-reciclaje" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 40V20m0 8c-8 0-13-5-13-13 8 0 13 5 13 13Zm0-5c0-9 5-15 14-15 0 9-5 15-14 15Z"/></svg></span><b>Orgánico</b><small>Restos naturales</small></button>
+      </div>
+      <div id="mensaje" role="status" aria-live="assertive"></div>
+    </section>
+
+    <section id="pantalla-final" aria-live="polite">
+      <div class="final-sello" id="final-sello">♻</div>
+
+      <p class="eyebrow" id="final-eyebrow">Misión completada</p>
+
+      <h2 id="final-titulo">¡Gracias por cuidar el mundo!</h2>
+
+      <p class="puntaje-final" id="final-mensaje">
+     Tu puntaje final es <strong id="puntaje-final">0</strong> puntos
+      </p>
+
+    <button class="boton-reiniciar" type="button" onclick="reiniciarJuego()">
+    Jugar nuevamente <span>↗</span>
+    </button>
+    </section>
+    <footer class="creditos">Desarrolado por <span class="creditos-marca"><img src="logo_empresa.jpeg" alt="" aria-hidden="true"> Pakova</span></footer>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
